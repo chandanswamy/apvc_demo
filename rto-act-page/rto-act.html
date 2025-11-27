@@ -101,20 +101,91 @@
             color: #fff;
         }
 
+        /* ✅ Mobile Optimization */
         @media (max-width: 768px) {
             main {
-                margin: 20px 10px;
-                padding: 1.5rem;
+                margin: 15px 10px;
+                padding: 1rem;
+                box-shadow: none;
+                background: #fff;
             }
 
+            /* Page heading adjustments */
             .page-heading h1 {
-                font-size: 1.5rem;
+                font-size: 1.3rem;
+                line-height: 1.4;
+                text-align: center;
+            }
+
+            .page-heading p {
+                font-size: 0.9rem;
+                text-align: center;
+            }
+
+            /* Fix table overflow on mobile */
+            .table-responsive {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .rti-table {
+                box-shadow: none;
+                border-radius: 6px;
+            }
+
+            .rti-table table {
+                min-width: 650px;
+                /* Ensures content stays structured */
+                font-size: 13px;
             }
 
             .rti-table td,
             .rti-table th {
+                font-size: 13px;
+                padding: 0.6rem 0.5rem;
+                word-break: break-word;
+            }
+
+            /* Signature alignment */
+            .signature {
+                text-align: center;
                 font-size: 14px;
-                padding: 0.75rem;
+                margin-top: 1.5rem;
+            }
+
+            /* Header and logo layout */
+            .hwrap {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .page-title-content {
+                position: static;
+                transform: none;
+                margin-top: 8px;
+            }
+
+            .page-title-content img.logo-1 {
+                width: 50px;
+                height: auto;
+                margin-bottom: 5px;
+            }
+
+            .page-title {
+                font-size: 1.2rem;
+            }
+
+            .page-tagline {
+                font-size: 0.85rem;
+            }
+
+            /* Back button */
+            .back-btn {
+                font-size: 14px;
+                padding: 6px 14px;
+                border-radius: 4px;
             }
         }
     </style>
@@ -182,7 +253,7 @@
                 <tbody>
                     <!-- full content from user’s file -->
                     <tr>
-                        <td>(i)</td>
+                        <td>i</td>
                         <td>The particulars of its organisation, functions and duties</td>
                         <td>Andhra Pradesh Vigilance Commission comprises a single member, designated as the Andhra
                             Pradesh
@@ -214,7 +285,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>(ii)</td>
+                        <td>ii</td>
                         <td>The powers and duties of its officers and employees</td>
                         <td>The Commission has been provided with such staff as may be necessary for the proper
                             discharge of its
@@ -223,7 +294,7 @@
                             includes administrative, technical and legal officers.</td>
                     </tr>
                     <tr>
-                        <td>(iii)</td>
+                        <td>iii</td>
                         <td>The procedure followed in the decision-making process</td>
                         <td>As prescribed in Paras 6 (v) to (xvi) of <a href="../js/vol2/c1t1s243.html">G.O.Ms.No.421
                                 G.A (SC.D)
@@ -232,27 +303,27 @@
                             tendering advice on vigilance matters etc.</td>
                     </tr>
                     <tr>
-                        <td>(iv)</td>
+                        <td>iv</td>
                         <td>The norms set by it for discharge of its functions</td>
                         <td>As specified in the Scheme of Vigilance Commission, vide <a
                                 href="../js/vol2/c1t1s243.html">G.O.Ms.No.421 G.A.(SCD) Dept dated 3.8.1993</a>.</td>
                     </tr>
                     <tr>
-                        <td>(v)</td>
+                        <td>v</td>
                         <td>The rules, regulations, instructions, manuals and records, held by it or under its control
                             or used by its employees for discharging its functions</td>
                         <td>A.P. Vigilance Manual in four volumes is available at <a
                                 href="http://apvc.ap.nic.in">http://apvc.ap.nic.in</a>.</td>
                     </tr>
                     <tr>
-                        <td>(vi)</td>
+                        <td>vi</td>
                         <td>A statement of the categories of documents that are held by it or under its control</td>
                         <td>Commission does not hold any documents. It only maintains the shadow files of the files
                             referred to by
                             the Departments for recording receipt and disposal and advice tendered by Commission.</td>
                     </tr>
                     <tr>
-                        <td>(vii)</td>
+                        <td>vii</td>
                         <td>The particulars of any arrangement that exists for consultation with, or representation by,
                             the members of the public in relation to the formulation of its policy or implementation
                             thereof</td>
@@ -262,7 +333,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>(viii)</td>
+                        <td>viii</td>
                         <td>A statement of the boards, councils, committees and other bodies consisting of two or more
                             persons constituted as its part or for the purpose of its advice, and as to whether meetings
                             of those boards, councils, committees and other bodies are open to the public, or the
@@ -270,36 +341,36 @@
                         <td>Not applicable.</td>
                     </tr>
                     <tr>
-                        <td>(ix)</td>
+                        <td>ix</td>
                         <td>A directory of its officers and employees</td>
                         <td><a href="../apvc-employee/apvc-employee.html">View Officers List</a></td>
                     </tr>
                     <tr>
-                        <td>(x)</td>
+                        <td>x</td>
                         <td>The monthly remuneration received by each of its officers and employees, including the
                             system of compensation as provided in its regulations</td>
                         <td><a href="apsalary.htm">View Salary Details</a></td>
                     </tr>
                     <tr>
-                        <td>(xi)</td>
+                        <td>xi</td>
                         <td>The budget allocated to each of its agency, indicating the particulars of all plans,
                             proposed expenditure and reports on disbursements made</td>
                         <td><a href="budget15.htm">Click here</a> for detailed budget information.</td>
                     </tr>
                     <tr>
-                        <td>(xii)</td>
+                        <td>xii</td>
                         <td>The manner of execution of subsidy programmes, including the amounts allocated and the
                             details of beneficiaries of such programmes</td>
                         <td>Not applicable.</td>
                     </tr>
                     <tr>
-                        <td>(xiii)</td>
+                        <td>xiii</td>
                         <td>Particulars of recipients of concessions, permits or authorizations granted by them.
                         </td>
                         <td>Not applicable.</td>
                     </tr>
                     <tr>
-                        <td>(xiv)</td>
+                        <td>xiv</td>
                         <td>Details in respect of the information, available to or held by it, reduced in an electronic
                             form.</td>
                         <td>The important information of general interest together with the four volumes of Vigilance
@@ -307,13 +378,13 @@
                             available on the Commission’s website.</td>
                     </tr>
                     <tr>
-                        <td>(xv)</td>
+                        <td>xv</td>
                         <td>The particulars of facilities available to citizens for obtaining information, including the
                             working hours of a library or reading room, if maintained for public use.</td>
                         <td>Not applicable.</td>
                     </tr>
                     <tr>
-                        <td>(xvi)</td>
+                        <td>xvi</td>
                         <td>The names, designations and other particulars of the Public Information Officers.</td>
                         <td><a href="RTIACT.htm">Click here</a> for details of Public Information Officers.</td>
                     </tr>
