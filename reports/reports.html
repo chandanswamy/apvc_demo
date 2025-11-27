@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Reports | Andhra Pradesh Vigilance Commission</title>
+
+    <!-- Libraries -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <!-- Shared APVC Styles -->
+    <link rel="stylesheet" href="../index.css">
+
+    <style>
+        main {
+            max-width: 90%;
+            margin: 40px auto;
+            background: var(--card, #fff);
+            border-radius: 10px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+            padding: 2.5rem;
+        }
+
+        .page-heading {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .page-heading h1 {
+            font-weight: 700;
+            font-size: 2rem;
+            color: var(--navy, #1b4d89);
+            text-transform: uppercase;
+        }
+
+        .counter-box {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            padding: 30px 15px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .counter-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .counter-box h3 {
+            font-size: 2rem;
+            color: var(--navy, #1b4d89);
+            margin-bottom: 0;
+        }
+
+        .counter-box p {
+            font-weight: 500;
+            color: #333;
+        }
+
+        .report-list {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+            padding: 1rem;
+        }
+
+        .report-notice-item {
+            background: linear-gradient(180deg, rgba(240, 246, 255, 0.8), rgba(255, 255, 255, 0.9));
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 8px;
+            transition: transform .18s ease, box-shadow .18s ease;
+        }
+
+        .report-notice-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(10, 35, 70, 0.06);
+        }
+
+        .report-list a {
+            color: var(--navy, #1b4d89);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .report-list a:hover {
+            color: var(--accent, #ffc107);
+        }
+
+        .back-btn {
+            border: 2px solid var(--accent, #ffc107);
+            color: var(--navy, #1b4d89);
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .back-btn:hover {
+            background: var(--accent, #ffc107);
+            color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            main {
+                margin: 20px auto;
+                padding: 1rem;
+            }
+
+            .page-heading h1 {
+                font-size: 1.6rem;
+            }
+        }
+
+        .accordion-button {
+            font-weight: 600;
+            color: #1b4d89;
+            background: #f8faff;
+        }
+
+        .accordion-button:not(.collapsed) {
+            color: #fff;
+            background: #1b4d89;
+            box-shadow: none;
+        }
+
+        .accordion-body ul li {
+            padding: 6px 0;
+        }
+
+        .accordion-body a {
+            color: #1b4d89;
+            text-decoration: none;
+        }
+
+        .accordion-body a:hover {
+            color: #ffc107;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Font Control Topbar -->
+    <div class="gov-topbar">
+        <div class="gov-right">
+            <div class="font-controls">
+                <span class="f-btn" id="fontPlus">A+</span>
+                <span class="f-btn" id="fontNormal">A</span>
+                <span class="f-btn" id="fontMinus">A-</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="hwrap">
+            <div class="cm-section d-flex align-items-end px-2">
+                <img class="logo-2 mx-2" src="../assets/CM photo.jpg" alt="Chief Minister" />
+                <div class="ms-1">
+                    <p class="m-0 fw-bold">Sri N. Chandra Babu Naidu</p>
+                    <p class="m-0">Hon’ble Chief Minister</p>
+                    <p class="m-0">Andhra Pradesh</p>
+                </div>
+            </div>
+            <div class="page-title-content d-flex align-items-center px-2">
+                <img class="logo-1 mx-2" src="../assets/state_emblem.png" alt="logo" />
+                <div>
+                    <h1 class="page-title">Vigilance Commission</h1>
+                    <p class="page-tagline">Government of Andhra Pradesh</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="apvc-nav">
+        <div class="mobile-nav-header">
+            <span class="mobile-title">Menu</span>
+            <span class="hamburger" onclick="toggleMobileMenu()">☰</span>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="../index.html">Home&nbsp;<i class="fa fa-home"></i></a></li>
+        </ul>
+    </nav>
+
+    <!-- Main -->
+    <main>
+        <div class="page-heading">
+            <h1>Reports</h1>
+            <p>Transparency through documentation and performance statistics</p>
+        </div>
+
+        <!-- Report Accordion -->
+        <section class="report-list mt-5">
+            <div class="accordion" id="reportAccordion">
+
+                <!-- Year 2018–2019 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading2019">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapse2019" aria-expanded="false" aria-controls="collapse2019">
+                            <i class="bi bi-calendar3 me-2 text-primary"></i> 2018–2019
+                        </button>
+                    </h2>
+                    <div id="collapse2019" class="accordion-collapse collapse" aria-labelledby="heading2019"
+                        data-bs-parent="#reportAccordion">
+                        <div class="accordion-body">
+                            <ul class="list-unstyled mb-0">
+                                <li><i class="bi bi-file-earmark-text me-2 text-primary"></i>
+                                    <a href="reports/annual/2018-19.html" target="_blank">Annual Report of 2018-2019</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Year 2017–2018 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading2018">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapse2018" aria-expanded="false" aria-controls="collapse2018">
+                            <i class="bi bi-calendar3 me-2 text-primary"></i> 2017–2018
+                        </button>
+                    </h2>
+                    <div id="collapse2018" class="accordion-collapse collapse" aria-labelledby="heading2018"
+                        data-bs-parent="#reportAccordion">
+                        <div class="accordion-body">
+                            <ul class="list-unstyled mb-0">
+                                <li><i class="bi bi-file-earmark-text me-2 text-primary"></i>
+                                    <a href="reports/monthly/apr2017.pdf" target="_blank">April 2017</a>
+                                </li>
+                                <li><i class="bi bi-file-earmark-text me-2 text-primary"></i>
+                                    <a href="reports/monthly/may2017.pdf" target="_blank">May 2017</a>
+                                </li>
+                                <li><i class="bi bi-file-earmark-text me-2 text-primary"></i>
+                                    <a href="reports/monthly/june2017.pdf" target="_blank">June 2017</a>
+                                </li>
+                                <li><i class="bi bi-file-earmark-text me-2 text-primary"></i>
+                                    <a href="reports/monthly/july2017.pdf" target="_blank">July 2017</a>
+                                </li>
+                                <li><i class="bi bi-file-earmark-text me-2 text-primary"></i>
+                                    <a href="reports/monthly/aug2017.pdf" target="_blank">August 2017</a>
+                                </li>
+                                <li><i class="bi bi-file-earmark-text me-2 text-primary"></i>
+                                    <a href="reports/monthly/sep2017.pdf" target="_blank">September 2017</a>
+                                </li>
+                                <li><i class="bi bi-file-earmark-text me-2 text-primary"></i>
+                                    <a href="reports/monthly/oct2017.pdf" target="_blank">October 2017</a>
+                                </li>
+                                <li><i class="bi bi-file-earmark-text me-2 text-primary"></i>
+                                    <a href="reports/monthly/nov2017.pdf" target="_blank">November 2017</a>
+                                </li>
+                                <li><i class="bi bi-file-earmark-text me-2 text-primary"></i>
+                                    <a href="reports/monthly/dec2017.pdf" target="_blank">December 2017</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Year 2016–2017 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading2017">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapse2017" aria-expanded="false" aria-controls="collapse2017">
+                            <i class="bi bi-calendar3 me-2 text-primary"></i> 2016–2017
+                        </button>
+                    </h2>
+                    <div id="collapse2017" class="accordion-collapse collapse" aria-labelledby="heading2017"
+                        data-bs-parent="#reportAccordion">
+                        <div class="accordion-body">
+                            <ul class="list-unstyled mb-0">
+                                <li><i class="bi bi-file-earmark-text me-2 text-primary"></i>
+                                    <a href="reports/monthly/apr2016.htm" target="_blank">April 2016</a>
+                                </li>
+                                <li><i class="bi bi-file-earmark-text me-2 text-primary"></i>
+                                    <a href="reports/monthly/may2016.htm" target="_blank">May 2016</a>
+                                </li>
+                                <li><i class="bi bi-file-earmark-text me-2 text-primary"></i>
+                                    <a href="reports/monthly/june2016.htm" target="_blank">June 2016</a>
+                                </li>
+                                <li><i class="bi bi-file-earmark-text me-2 text-primary"></i>
+                                    <a href="reports/monthly/jul2016.htm" target="_blank">July 2016</a>
+                                </li>
+                                <li><i class="bi bi-file-earmark-text me-2 text-primary"></i>
+                                    <a href="reports/monthly/aug2016.htm" target="_blank">August 2016</a>
+                                </li>
+                                <li><i class="bi bi-file-earmark-text me-2 text-primary"></i>
+                                    <a href="reports/monthly/sep2016.htm" target="_blank">September 2016</a>
+                                </li>
+                                <li><i class="bi bi-file-earmark-text me-2 text-primary"></i>
+                                    <a href="reports/monthly/oct2016.htm" target="_blank">October 2016</a>
+                                </li>
+                                <li><i class="bi bi-file-earmark-text me-2 text-primary"></i>
+                                    <a href="reports/monthly/nov2016.htm" target="_blank">November 2016</a>
+                                </li>
+                                <li><i class="bi bi-file-earmark-text me-2 text-primary"></i>
+                                    <a href="reports/monthly/dec2016.htm" target="_blank">December 2016</a>
+                                </li>
+                                <li><i class="bi bi-file-earmark-text me-2 text-primary"></i>
+                                    <a href="reports/monthly/jan2017.pdf" target="_blank">January 2017</a>
+                                </li>
+                                <li><i class="bi bi-file-earmark-text me-2 text-primary"></i>
+                                    <a href="reports/monthly/feb2017.pdf" target="_blank">February 2017</a>
+                                </li>
+                                <li><i class="bi bi-file-earmark-text me-2 text-primary"></i>
+                                    <a href="reports/monthly/march2017.htm" target="_blank">March 2017</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Year 2015–2016 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading2016">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapse2016" aria-expanded="false" aria-controls="collapse2016">
+                            <i class="bi bi-calendar3 me-2 text-primary"></i> 2015–2016
+                        </button>
+                    </h2>
+                    <div id="collapse2016" class="accordion-collapse collapse" aria-labelledby="heading2016"
+                        data-bs-parent="#reportAccordion">
+                        <div class="accordion-body">
+                            <ul class="list-unstyled mb-0">
+                                <li><i class="bi bi-file-earmark-text me-2 text-primary"></i>
+                                    <a href="reports/monthly/april2015.htm" target="_blank">April 2015</a>
+                                </li>
+                                <li><i class="bi bi-file-earmark-text me-2 text-primary"></i>
+                                    <a href="reports/monthly/may2015.htm" target="_blank">May 2015</a>
+                                </li>
+                                <li><i class="bi bi-file-earmark-text me-2 text-primary"></i>
+                                    <a href="reports/monthly/june2015.htm" target="_blank">June 2015</a>
+                                </li>
+                                <li><i class="bi bi-file-earmark-text me-2 text-primary"></i>
+                                    <a href="reports/monthly/july2015.htm" target="_blank">July 2015</a>
+                                </li>
+                                <li><i class="bi bi-file-earmark-text me-2 text-primary"></i>
+                                    <a href="reports/monthly/aug2015.htm" target="_blank">August 2015</a>
+                                </li>
+                                <li><i class="bi bi-file-earmark-text me-2 text-primary"></i>
+                                    <a href="reports/monthly/sept2015.htm" target="_blank">September 2015</a>
+                                </li>
+                                <li><i class="bi bi-file-earmark-text me-2 text-primary"></i>
+                                    <a href="reports/monthly/oct2015.htm" target="_blank">October 2015</a>
+                                </li>
+                                <li><i class="bi bi-file-earmark-text me-2 text-primary"></i>
+                                    <a href="reports/monthly/nov2015.htm" target="_blank">November 2015</a>
+                                </li>
+                                <li><i class="bi bi-file-earmark-text me-2 text-primary"></i>
+                                    <a href="reports/monthly/dec2015.htm" target="_blank">December 2015</a>
+                                </li>
+                                <li><i class="bi bi-file-earmark-text me-2 text-primary"></i>
+                                    <a href="reports/monthly/jan2016.htm" target="_blank">January 2016</a>
+                                </li>
+                                <li><i class="bi bi-file-earmark-text me-2 text-primary"></i>
+                                    <a href="reports/monthly/feb2016.htm" target="_blank">February 2016</a>
+                                </li>
+                                <li><i class="bi bi-file-earmark-text me-2 text-primary"></i>
+                                    <a href="reports/monthly/mar2016.htm" target="_blank">March 2016</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Year 2014–2015 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading2015">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapse2015" aria-expanded="false" aria-controls="collapse2015">
+                            <i class="bi bi-calendar3 me-2 text-primary"></i> 2014–2015
+                        </button>
+                    </h2>
+                    <div id="collapse2015" class="accordion-collapse collapse" aria-labelledby="heading2015"
+                        data-bs-parent="#reportAccordion">
+                        <div class="accordion-body">
+                            <ul class="list-unstyled mb-0">
+                                <li><i class="bi bi-file-earmark-text me-2 text-primary"></i>
+                                    <a href="reports/monthly/july14.htm" target="_blank">July 2014</a>
+                                </li>
+                                <li><i class="bi bi-file-earmark-text me-2 text-primary"></i>
+                                    <a href="reports/monthly/augustap.htm" target="_blank">August 2014</a>
+                                </li>
+                                <li><i class="bi bi-file-earmark-text me-2 text-primary"></i>
+                                    <a href="reports/monthly/SEPTEMBER-14-ap.htm" target="_blank">September 2014</a>
+                                </li>
+                                <li><i class="bi bi-file-earmark-text me-2 text-primary"></i>
+                                    <a href="reports/monthly/october-14.htm" target="_blank">October 2014</a>
+                                </li>
+                                <li><i class="bi bi-file-earmark-text me-2 text-primary"></i>
+                                    <a href="reports/monthly/november-14.htm" target="_blank">November 2014</a>
+                                </li>
+                                <li><i class="bi bi-file-earmark-text me-2 text-primary"></i>
+                                    <a href="reports/monthly/dec14.htm" target="_blank">December 2014</a>
+                                </li>
+                                <li><i class="bi bi-file-earmark-text me-2 text-primary"></i>
+                                    <a href="reports/monthly/jan15.htm" target="_blank">January 2015</a>
+                                </li>
+                                <li><i class="bi bi-file-earmark-text me-2 text-primary"></i>
+                                    <a href="reports/monthly/Feb15.htm" target="_blank">February 2015</a>
+                                </li>
+                                <li><i class="bi bi-file-earmark-text me-2 text-primary"></i>
+                                    <a href="reports/monthly/mar15.htm" target="_blank">March 2015</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Year 2013–2014 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading2014">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapse2014" aria-expanded="false" aria-controls="collapse2014">
+                            <i class="bi bi-calendar3 me-2 text-primary"></i> 2013–2014
+                        </button>
+                    </h2>
+                    <div id="collapse2014" class="accordion-collapse collapse" aria-labelledby="heading2014"
+                        data-bs-parent="#reportAccordion">
+                        <div class="accordion-body">
+                            <ul class="list-unstyled mb-0">
+                                <li><i class="bi bi-file-earmark-text me-2 text-primary"></i>
+                                    <a href="reports/monthly/April-June2013.htm" target="_blank">April - June 2013</a>
+                                </li>
+                                <li><i class="bi bi-file-earmark-text me-2 text-primary"></i>
+                                    <a href="reports/monthly/july-sep2013.htm" target="_blank">July - September 2013</a>
+                                </li>
+                                <li><i class="bi bi-file-earmark-text me-2 text-primary"></i>
+                                    <a href="reports/monthly/Oct-Dec-2013.htm" target="_blank">October - December
+                                        2013</a>
+                                </li>
+                                <li><i class="bi bi-file-earmark-text me-2 text-primary"></i>
+                                    <a href="reports/monthly/jan2014.htm" target="_blank">January 2014</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Year 2012–2013 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading2013">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapse2013" aria-expanded="false" aria-controls="collapse2013">
+                            <i class="bi bi-calendar3 me-2 text-primary"></i> 2012–2013
+                        </button>
+                    </h2>
+                    <div id="collapse2013" class="accordion-collapse collapse" aria-labelledby="heading2013"
+                        data-bs-parent="#reportAccordion">
+                        <div class="accordion-body">
+                            <ul class="list-unstyled mb-0">
+                                <li><i class="bi bi-file-earmark-text me-2 text-primary"></i>
+                                    <a href="reports/monthly/jan2013.htm" target="_blank">Annual Report of 2012-2013</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Year 2011–2012 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading2012">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapse2012" aria-expanded="false" aria-controls="collapse2012">
+                            <i class="bi bi-calendar3 me-2 text-primary"></i> 2011–2012
+                        </button>
+                    </h2>
+                    <div id="collapse2012" class="accordion-collapse collapse" aria-labelledby="heading2012"
+                        data-bs-parent="#reportAccordion">
+                        <div class="accordion-body">
+                            <ul class="list-unstyled mb-0">
+                                <li><i class="bi bi-file-earmark-text me-2 text-primary"></i>
+                                    <a href="reports/monthly/jan_2012.htm" target="_blank">Annual Report of
+                                        2011-2012</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <div class="text-center mt-5">
+            <a href="../index.html" class="btn back-btn px-4"><i class="bi bi-arrow-left"></i> Back to Home</a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h5>Disclaimer</h5>
+                    <p>
+                        The contents of this site are informatory in nature.
+                        <br>
+                        You are advised to verify the same from Commission's office.
+                        <br>
+                        For any clarification, please
+                        mail to
+                        <a href="mailto:commr_vc@ap.gov.in" class="text-decoration-none text-primary">
+                            commr_vc@ap.gov.in
+                        </a>
+                    </p>
+                </div>
+            </div>
+            <hr style="border-color: rgba(255,255,255,0.2)" />
+            <p class="text-center small mb-0">
+                © 2025 Andhra Pradesh Vigilance Commission | Website Designed, Developed
+                and Hosted by NIC, Andhra Pradesh
+                <img src="../assets/Nic_logo.jpg" alt="NIC Logo" height="32" class="ms-2"
+                    style="vertical-align: middle" />
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        // Mobile Navbar Toggle
+        function toggleMobileMenu() {
+            document.querySelector(".nav-menu").classList.toggle("open");
+        }
+
+        // Font Controls
+        let defaultSize = 16, currentSize = defaultSize;
+        const html = document.documentElement;
+        document.getElementById("fontPlus").onclick = () => html.style.fontSize = (++currentSize) + "px";
+        document.getElementById("fontNormal").onclick = () => html.style.fontSize = (currentSize = defaultSize) + "px";
+        document.getElementById("fontMinus").onclick = () => {
+            if (currentSize > 10) html.style.fontSize = (--currentSize) +
+                "px";
+        };
+    </script>
+</body>
+
+</html>

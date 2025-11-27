@@ -1,0 +1,558 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
+    <title>Andhra Pradesh Vigilance Commission</title>
+</head>
+
+<body>
+    <div class="gov-topbar">
+        <div class="gov-right">
+            <div class="font-controls">
+                <span class="f-btn" id="fontPlus">A+</span>
+                <span class="f-btn" id="fontNormal">A</span>
+                <span class="f-btn" id="fontMinus">A-</span>
+            </div>
+        </div>
+    </div>
+    <div class="sticky-wrapper">
+        <header>
+            <div class="hwrap">
+                <div class="cm-section d-flex align-items-end px-2">
+                    <img class="logo-2 mx-2" src="assets/CM photo.jpg" alt="cheif-minister">
+                    <div class="ms-1">
+                        <p class="m-0" style="font-weight: bold; text-align: left;">Sri
+                            N. Chandra Babu Naidu</p>
+                        <p class="m-0" style="text-align: left;">Hon'ble Chief Minister</p>
+                        <p class="m-0" style="text-align: left;">Andhra Pradesh</p>
+                    </div>
+                </div>
+                <div class="page-title-content d-flex align-items-center px-2">
+                    <img class="logo-1 mx-2" src="assets/state_emblem.png" alt="logo">
+                    <div>
+                        <h1 class="page-title">Vigilance Commission</h1>
+                        <p class="page-tagline">Government of Andhra Pradesh</p>
+                    </div>
+                </div>
+
+            </div>
+        </header>
+        <nav class="apvc-nav">
+
+            <!-- MOBILE HAMBURGER -->
+            <div class="mobile-nav-header">
+                <span class="mobile-title">Menu</span>
+                <span class="hamburger" onclick="toggleMobileMenu()">☰</span>
+            </div>
+
+            <!-- MAIN MENU -->
+            <ul class="nav-menu">
+
+                <li><a href="#">Home&nbsp;<i class="fa fa-home"></i></a></li>
+
+                <li class="dropdown">
+                    <a href="#">About APVC<span class="plus">+</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#introduction">Introduction</a></li>
+                        <li><a href="#jurisdiction">Jurisdiction & Function</a></li>
+                        <li><a href="#organizational-setup">Organizational Setup</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown d-block d-lg-none">
+                    <a href="#">APVC Manuals<span class="plus">+</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="assets/documents/vigilance_manuals/Vigilance Manual 2022 - Volume-I.pdf"
+                                target="_blank">Vigilance Manual - Volume I </a></li>
+                        <li><a href="assets/documents/vigilance_manuals/Vigilance Manual 2022 - Volume-II.pdf"
+                                target="_blank">Vigilance Manual - Volume II </a></li>
+                        <li><a href="assets/documents/vigilance_manuals/Vigilance Manual 2022 - Volume-III.pdf"
+                                target="_blank">Vigilance Manual – Volume III</a></li>
+                        <li><a href="assets/documents/vigilance_manuals/Vigilance Manual 2022 - Volume-IV.pdf"
+                                target="_blank">Vigilance Manual – Volume IV</a></li>
+                        <li><a href="assets/documents/HandbookforCVO-VOs.pdf" target="_blank">Handbook for Vigilance
+                                Officers</a></li>
+                        <li><a href="assets/documents/HandBookonDisciplinaryProceedings-2023.pdf"
+                                target="_blank">Handbook
+                                on Disciplinary Proceedings</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown d-block d-lg-none">
+                    <a href="#">APVC Personnel<span class="plus">+</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#vigilance-comissioner">Commissioner</a></li>
+                        <li><a href="former-vigilance-comissioners/former-vigilance-comissioners.html">Former Vigilance
+                                Commissioners</a></li>
+                        <li><a href="apvc-employee/apvc-employee.html">Officers Working</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="reports/reports.html">Reports</a>
+                </li>
+
+                <li class="dropdown d-block d-lg-none">
+                    <a href="#">Circulars<span class="plus">+</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="vigilance-angle/vigilance-angle.html">Definition of Vigilance Angle</a></li>
+
+                        <li><a href="assets/documents/2025GAD_MS81_E.pdf">Consultation with the A.P. Vigilance
+                                Commission</a></li>
+
+                        <li><a href="assets/documents/Memo No 2985761 SC.F A1 2021-1 GA(C.F) DEPT Dated 11-11-2025.pdf">Strike
+                                off the name from the Respondents at the admission stage before the Hon'ble High Court
+                                of A.P</a></li>
+                    </ul>
+                </li>
+
+                <li class="d-block d-lg-none">
+                    <a href="gallery/gallery.html">Gallery</a>
+                </li>
+
+                <li class="dropdown d-block d-lg-none">
+                    <a href="#">Press Note<span class="plus">+</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="press-note/press-note.html">Whistleblower Protection</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown d-block d-lg-none">
+                    <a href="#">APVC Information Under RTI Act<span class="plus">+</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="rto-act-page/rto-act.html">Information published under Section 4(1)(b) of the RTI
+                                Act, 2005</a></li>
+                        <li><a href="assets/documents/RTI-Act.pdf">Right to Information Act 2005</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#contact">Contact Us</a>
+                </li>
+
+            </ul>
+        </nav>
+    </div>
+    <div class="apvc-container">
+        <aside class="sidebar d-none d-lg-block">
+            <nav class="nav-sections">
+
+                <div class="nav-block">
+                    <h2 class="nav-title">About APVC</h2>
+                    <div class="nav-links">
+                        <a href="#introduction">Introduction</a>
+                        <a href="#jurisdiction">Jurisdiction & Function</a>
+                        <a href="#organizational-setup">Organizational Setup</a>
+                    </div>
+                </div>
+
+                <div class="nav-block">
+                    <h2 class="nav-title">APVC Personnel</h2>
+                    <div class="nav-links">
+                        <a href="#vigilance-comissioner">Vigilance Commissioner</a>
+                        <a href="former-vigilance-comissioners/former-vigilance-comissioners.html">Former Vigilance
+                            Commissioners</a>
+                    </div>
+                </div>
+
+                <div class="nav-block">
+                    <h2 class="nav-title">APVC Manuals</h2>
+                    <div class="nav-links">
+                        <a href="assets/documents/vigilance_manuals/Vigilance Manual 2022 - Volume-I.pdf"
+                            target="_blank">Vigilance Manual - Volume I </a>
+                        <a href="assets/documents/vigilance_manuals/Vigilance Manual 2022 - Volume-II.pdf"
+                            target="_blank">Vigilance Manual - Volume II </a>
+                        <a href="assets/documents/vigilance_manuals/Vigilance Manual 2022 - Volume-III.pdf"
+                            target="_blank">Vigilance Manual – Volume III</a>
+                        <a href="assets/documents/vigilance_manuals/Vigilance Manual 2022 - Volume-IV.pdf"
+                            target="_blank">Vigilance Manual – Volume IV</a>
+                        <a href="assets/documents/HandbookforCVO-VOs.pdf" target="_blank">Handbook for Vigilance
+                            Officers</a>
+                        <a href="assets/documents/HandBookonDisciplinaryProceedings-2023.pdf" target="_blank">Handbook
+                            on Disciplinary Proceedings</a>
+                    </div>
+                </div>
+
+                <div class="nav-block">
+                    <h2 class="nav-title">Gallery</h2>
+                    <div class="nav-links">
+                        <a href="gallery/gallery.html#vigilance-week">Vigilance Awareness Week 2025</a>
+                        <a href="gallery/gallery.html#annual-report">Annual Report 2024-2025 Photos</a>
+                    </div>
+                </div>
+
+                <div class="nav-block">
+                    <h2 class="nav-title">Circulars</h2>
+                    <div class="nav-links">
+                        <a href="vigilance-angle/vigilance-angle.html">Definition of Vigilance Angle</a>
+                    </div>
+                    <div class="nav-links">
+                        <a href="assets/documents/2025GAD_MS81_E.pdf" target="_blank">Consultation with the A.P.
+                            Vigilance Commission</a>
+                    </div>
+                    <div class="nav-links">
+                        <a target="_blank"
+                            href="assets/documents/Memo No 2985761 SC.F A1 2021-1 GA(C.F) DEPT Dated 11-11-2025.pdf">Strike
+                            off the name from the Respondents at the admission stage before the Hon'ble High Court of
+                            A.P</a>
+                    </div>
+                </div>
+
+                <div class="nav-block">
+                    <h2 class="nav-title">Staff Details</h2>
+                    <div class="nav-links">
+                        <a href="apvc-employee/apvc-employee.html" target="_blank">Officers
+                            Working</a>
+                    </div>
+                </div>
+
+                <div class="nav-block">
+                    <h2 class="nav-title">Press Note</h2>
+                    <div class="nav-links">
+                        <a href="press-note/press-note.html">Whistleblower Protection</a>
+                    </div>
+                </div>
+
+                <div class="nav-block">
+                    <h2 class="nav-title">APVC Information Under RTI Act</h2>
+                    <div class="nav-links">
+                        <a href="rto-act-page/rto-act.html">Information published under Section 4(1)(b) of the RTI Act,
+                            2005</a>
+                        <a href="assets/documents/RTI-Act.pdf" target="_blank">Right to Information Act 2005</a>
+                    </div>
+                </div>
+            </nav>
+        </aside>
+
+        <div class="grid-layout">
+
+            <div class="left-column">
+
+                <!-- Welcome Section -->
+                <section class="apvc-section">
+                    <div class="section-title">
+                        Welcome to Andhra Pradesh Vigilance Commission
+                    </div>
+
+                    <div class="section-content" id="introduction">
+                        <h5>Origin & Evolution</h5>
+                        <div class="separator"></div>
+
+                        <p>
+                            The Andhra Pradesh Vigilance Commission came into being on <strong>27 June 1964</strong>, as
+                            an
+                            independent
+                            advisory body to deal with prevention of corruption and maintenance of integrity in public
+                            services,
+                            ensuring just and fair exercise of administrative powers vested in authorities under the
+                            State
+                            Government.
+                        </p>
+
+                        <p>
+                            Its primary objective is to advise the Government on matters relating to corruption,
+                            misconduct,
+                            lack of
+                            integrity or other malpractices or misdemeanour on the part of public servants under the
+                            executive power of
+                            the State.
+                        </p>
+
+                        <h5 class="mt-4">Abolition & Revival</h5>
+                        <div class="separator"></div>
+
+                        <p>
+                            The Commission was abolished vide <strong>G.O.Ms.No.72, GA(SC.E), dated 03-02-1983</strong>,
+                            creating a
+                            special authority called “Dharma Mahamatra”.
+                        </p>
+
+                        <p>
+                            With the enforcement of the <strong>Andhra Pradesh Lok Ayukta and Upa Lok Ayukta Act,
+                                1983</strong>, the
+                            Commission was formally abolished on <strong>18-08-1984</strong>.
+                        </p>
+
+                        <p>
+                            Based on recommendations of the Committee on Administrative Re-Organisation, the Commission
+                            was
+                            revived
+                            through <strong>G.O.Ms.No.368, GA(SC.D), dated 29-06-1993</strong>. It restarted functioning
+                            from
+                            <strong>30 June 1993</strong> with the same jurisdiction and responsibilities.
+                        </p>
+                    </div>
+                    <div class="section-content" id="jurisdiction">
+                        <h5>Jurisdiction</h5>
+                        <div class="separator"></div>
+
+                        <p>
+                            The Scheme of the Vigilance Commission approved in <strong>G.O.Ms.No.421, GA(SC.D), dated
+                                03-08-1993</strong>
+                            defines the jurisdiction and functions of the Commission.
+                        </p>
+
+                        <p>The Commission may:</p>
+
+                        <ul>
+                            <li>Cause inquiry into any transaction involving improper or corrupt actions by public
+                                servants
+                                (including AIS officers).</li>
+                            <li>Investigate complaints of corruption, misconduct, lack of integrity or criminal
+                                misconduct
+                                under the Prevention of Corruption Act, 1988.</li>
+                            <li>Call for records, reports, and statements from all Government departments, undertakings,
+                                and
+                                notified autonomous bodies.</li>
+                            <li>Exercise general superintendence over vigilance and anti-corruption work.</li>
+                            <li>Direct the Anti-Corruption Bureau (ACB) to register and investigate cases.</li>
+                            <li>Entrust complaints to the concerned Department/Public Undertaking for inquiry.</li>
+                        </ul>
+
+                        <p>
+                            The Commission enjoys autonomy similar to the Andhra Pradesh Public Service Commission. If
+                            the
+                            Government
+                            proposes to deviate from its advice, the case must be circulated to the Chief Minister
+                            through
+                            the Chief
+                            Secretary.
+                        </p>
+
+                        <p>
+                            The Commission submits an annual report to the Government (GA(SC.F) Dept), highlighting
+                            important
+                            recommendations and specifying reasons for non-acceptance of any advice.
+                        </p>
+                    </div>
+                    <div class="section-content">
+                        <h5>Procedure</h5>
+                        <div class="separator"></div>
+
+                        <p>
+                            Procedural instructions were issued with concurrence of Government via
+                            <strong>Letter No.66/VC.A2/93-3, dated 10-10-1994</strong>. These instructions specify:
+                        </p>
+
+                        <ul>
+                            <li>Authorities competent to receive complaints.</li>
+                            <li>Procedure for enquiry by Department or ACB.</li>
+                            <li>Requirement of First Stage Advice (FSA) on enquiry reports.</li>
+                            <li>Requirement of Second Stage Advice (SSA) on proposed penalties.</li>
+                            <li>Roles of CVOs, Vigilance Officers, and Collectors.</li>
+                        </ul>
+
+                        <p>
+                            Further guidelines were issued in <strong>Memo No.235/Spl.B/2001-1, dated
+                                26-07-2001</strong>,
+                            classifying
+                            cases as:
+                        </p>
+
+                        <ul>
+                            <li><strong>Vigilance Cases</strong>: bribery, illegal gratification, causing loss to
+                                Government, fraud,
+                                cheating, misappropriation, unlawful gains, criminal misconduct.</li>
+                            <li><strong>Non-Vigilance Cases</strong>: administrative lapses without vigilance angle;
+                                these
+                                need not be
+                                referred to the Commission.</li>
+                        </ul>
+                    </div>
+                    <div class="section-content" id="organizational-setup">
+                        <h5>Organizational Setup</h5>
+                        <div class="separator"></div>
+
+                        <p>
+                            The organizational structure of the Andhra Pradesh Vigilance Commission is detailed in
+                            the official document provided below. This includes sanctioned posts, roles,
+                            functional hierarchy, and administrative arrangements.
+                        </p>
+
+                        <div class="card shadow-sm border-0 mt-4">
+                            <div class="card-body d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h5 class="mb-1 fw-bold" style="color:#1b4d89;">Organizational Setup – APVC</h5>
+                                    <p class="text-muted mb-0">Click below to view the official document</p>
+                                </div>
+                                <a href="assets/documents/org-setup.pdf" target="_blank"
+                                    class="btn btn-outline-primary">
+                                    <i class="bi bi-file-earmark-pdf me-2"></i> View PDF
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+            </div>
+            <!-- RIGHT COLUMN -->
+            <div class="right-column">
+
+                <div class="apvc-card">
+                    <img src="assets/comissoner_photo.jpg" alt="commissioner">
+                    <div class="card-content">
+                        <p>
+                            <strong>The Vigilance Commissioner</strong> handed over the
+                            <strong>Annual Report of the APVC</strong> for the years
+                            <strong>2023–24</strong> and <strong>2024–25</strong>
+                            to the Hon’ble <strong>Chief Minister</strong> in October 2025.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="apvc-card commissioner-name-card text-center py-3" id="vigilance-comissioner">
+                    <h5 class="m-0 fw-bold" style="color: var(--navy);">Sri Anil Chandra Punetha, IAS (Retd.)</h5>
+                    <p class="m-0 text-muted" style="font-size: 16px;"><b>Vigilance Commissioner</b></p>
+                </div>
+
+                <div class="apvc-card contact-card" id="contact">
+                    <div class="contact-header">Contact Details</div>
+
+                    <!-- EMAIL -->
+                    <div class="contact-row">
+                        <i class="fa fa-envelope contact-icon"></i>
+                        <div>
+                            <div class="label">Email</div>
+                            <a href="mailto:commr_vc@ap.gov.in" class="contact-link">commr_vc@ap.gov.in</a>
+                        </div>
+                    </div>
+
+                    <!-- PHONE -->
+                    <div class="contact-row">
+                        <i class="fa fa-phone contact-icon"></i>
+                        <div>
+                            <div class="label">Phone</div>
+                            <a href="tel:04012345678" class="contact-link">0863 - 2445687</a>
+                        </div>
+                    </div>
+
+                    <!-- ADDRESS -->
+                    <div class="contact-row">
+                        <i class="fa fa-map-marker contact-icon"></i>
+                        <div>
+                            <div class="label">Address</div>
+                            <p class="address">
+                                Andhra Pradesh Vigilance Commission<br>
+                                5th Building, 1st Floor<br>
+                                AP Secretariat, Velagapudi<br>
+                                Amaravati, Andhra Pradesh – 522238
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- MAP -->
+                    <div class="map-container">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3815.568731289213!2d80.5133888!3d16.405877299999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a35f0fbead2a3d9%3A0x4f92e52c58a3b161!2sAP%20Secretariat%20(Andhra%20Pradesh%20Secretariat)%2C%20Velagapudi%2C%20Amaravati%2C%20Andhra%20Pradesh%20522237!5e0!3m2!1sen!2sin!4v1713028000000!5m2!1sen!2sin"
+                            width="100%" height="300" style="border:0; border-radius:6px;" allowfullscreen=""
+                            loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h5>Disclaimer</h5>
+                    <p>
+                        The contents of this site are informatory in nature.
+                        <br>
+                        You are advised to verify the same from Commission's office.
+                        <br>
+                        For any clarification, please
+                        mail to
+                        <a href="mailto:commr_vc@ap.gov.in" class="text-decoration-none text-primary">
+                            commr_vc@ap.gov.in
+                        </a>
+                    </p>
+                </div>
+            </div>
+            <hr style="border-color: rgba(255,255,255,0.2)" />
+            <p class="text-center small mb-0">
+                © 2025 Andhra Pradesh Vigilance Commission | Website Designed, Developed
+                and Hosted by NIC, Andhra Pradesh
+                <img src="assets/Nic_logo.jpg" alt="NIC Logo" height="32" class="ms-2" style="vertical-align: middle" />
+            </p>
+        </div>
+    </footer>
+    </div>
+
+    <script>
+        function toggleMobileMenu() {
+            document.querySelector('.nav-menu').classList.toggle('open');
+        }
+
+        document.querySelectorAll('.dropdown > a').forEach(link => {
+            link.addEventListener('click', function (e) {
+                if (window.innerWidth <= 900) {
+                    e.preventDefault();
+                    this.parentElement.classList.toggle('open');
+                }
+            });
+        });
+    </script>
+    <script>
+        window.addEventListener("load", () => {
+            if (window.location.hash) {
+                history.replaceState(null, null, window.location.pathname);
+                window.scrollTo(0, 0);
+            }
+        });
+    </script>
+
+    <script>
+        // Default root size
+        let defaultSize = 16; // 16px = normal
+        let currentSize = defaultSize;
+
+        const html = document.documentElement;
+
+        // Buttons
+        const btnPlus = document.getElementById("fontPlus");
+        const btnNormal = document.getElementById("fontNormal");
+        const btnMinus = document.getElementById("fontMinus");
+
+        // Increase font
+        btnPlus.addEventListener("click", () => {
+            currentSize += 1;
+            html.style.fontSize = currentSize + "px";
+        });
+
+        // Reset to normal
+        btnNormal.addEventListener("click", () => {
+            currentSize = defaultSize;
+            html.style.fontSize = currentSize + "px";
+        });
+
+        // Decrease font
+        btnMinus.addEventListener("click", () => {
+            if (currentSize > 10) {      // safety limit
+                currentSize -= 1;
+                html.style.fontSize = currentSize + "px";
+            }
+        });
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+
+
+</body>
+
+</html>
