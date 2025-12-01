@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Circulars | Andhra Pradesh Vigilance Commission</title>
+
+    <!-- Libraries -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <!-- Shared APVC Styles -->
+    <link rel="stylesheet" href="../index.css">
+
+    <style>
+        main {
+            max-width: 90%;
+            margin: 40px auto;
+            background: var(--card, #fff);
+            border-radius: 10px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+            padding: 2.5rem;
+        }
+
+        .page-heading {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .page-heading h1 {
+            font-weight: 700;
+            font-size: 2rem;
+            color: var(--navy, #1b4d89);
+            text-transform: uppercase;
+        }
+
+        .counter-box {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            padding: 30px 15px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .counter-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .counter-box h3 {
+            font-size: 2rem;
+            color: var(--navy, #1b4d89);
+            margin-bottom: 0;
+        }
+
+        .counter-box p {
+            font-weight: 500;
+            color: #333;
+        }
+
+        .report-list {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+            padding: 1rem;
+        }
+
+        .report-list a {
+            color: var(--navy, #1b4d89);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .report-list a:hover {
+            color: var(--accent, #ffc107);
+        }
+
+        .back-btn {
+            border: 2px solid var(--accent, #ffc107);
+            color: var(--navy, #1b4d89);
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .back-btn:hover {
+            background: var(--accent, #ffc107);
+            color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            main {
+                margin: 20px auto;
+                padding: 1rem;
+            }
+
+            .page-heading h1 {
+                font-size: 1.6rem;
+            }
+        }
+
+        /* Simple circular list styles */
+        .circular-item {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.5rem 1rem;
+            padding: 0.9rem 1rem;
+            border-radius: 8px;
+            background: linear-gradient(180deg, rgba(240, 246, 255, 0.8), rgba(255, 255, 255, 0.9));
+            margin-bottom: 8px;
+            transition: transform .18s ease, box-shadow .18s ease;
+        }
+
+        .circular-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 18px rgba(10, 35, 70, 0.06);
+        }
+
+        .circular-title {
+            font-weight: 500;
+            color: #1b4d89;
+        }
+
+        .circular-meta {
+            font-size: 0.85rem;
+            color: #555;
+        }
+
+        .circular-actions .btn {
+            font-size: 0.85rem;
+            padding: 0.35rem 0.8rem;
+        }
+
+        .badge-year {
+            font-size: 0.75rem;
+            background: #e3eeff;
+            color: #1b4d89;
+            border-radius: 999px;
+            padding: 0.15rem 0.6rem;
+            margin-left: 0.25rem;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Font Control Topbar -->
+    <div class="gov-topbar">
+        <div class="gov-right">
+            <div class="font-controls">
+                <span class="f-btn" id="fontPlus">A+</span>
+                <span class="f-btn" id="fontNormal">A</span>
+                <span class="f-btn" id="fontMinus">A-</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="hwrap">
+            <div class="cm-section d-flex align-items-end px-2">
+                <img class="logo-2 mx-2" src="../assets/CM photo.jpg" alt="Chief Minister" />
+                <div class="ms-1">
+                    <p class="m-0 fw-bold">Sri N. Chandra Babu Naidu</p>
+                    <p class="m-0">Hon’ble Chief Minister</p>
+                    <p class="m-0">Andhra Pradesh</p>
+                </div>
+            </div>
+            <div class="page-title-content d-flex align-items-center px-2">
+                <img class="logo-1 mx-2" src="../assets/state_emblem.png" alt="logo" />
+                <div>
+                    <h1 class="page-title">Vigilance Commission</h1>
+                    <p class="page-tagline">Government of Andhra Pradesh</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="apvc-nav">
+        <div class="mobile-nav-header">
+            <span class="mobile-title">Menu</span>
+            <span class="hamburger" onclick="toggleMobileMenu()">☰</span>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="../index.html">Home&nbsp;<i class="fa fa-home"></i></a></li>
+        </ul>
+    </nav>
+
+    <!-- Main -->
+    <main>
+        <div class="page-heading">
+            <h1>GO's & Circulars</h1>
+            <p>Official circulars, instructions and administrative communications</p>
+        </div>
+
+        <!-- Simple Circular List -->
+        <section class="report-list mt-4">
+
+            <!-- Example circulars – you can replace with real ones -->
+
+            <div class="circular-item">
+                <div>
+                    <div class="circular-title">
+                        G.O.Ms.No.421 A.P. Vigilance Commission — Scheme defining jurisdiction, powers etc.
+                        <span class="badge-year">1993–1994</span>
+                    </div>
+                    <div class="circular-meta">
+                        Circular No. 01 &nbsp;•&nbsp; Dated: 03-08-1993.
+                    </div>
+                </div>
+                <div class="circular-actions">
+                    <!-- PDF -->
+                    <a href="../assets/documents/circulars/G.O.Ms.No.421, G A  (SC-D) Department, dated 3rd August, 1993..pdf"
+                        target="_blank" class="btn btn-sm btn-outline-primary">
+                        <i class="bi bi-file-earmark-pdf"></i> View PDF
+                    </a>
+                </div>
+            </div>
+
+            <div class="circular-item">
+                <div>
+                    <div class="circular-title">
+                        G.O.Ms.No.522 Definition of Vigilance Angle
+                        <span class="badge-year">2007–2008</span>
+                    </div>
+                    <div class="circular-meta">
+                        Circular No. 02 &nbsp;•&nbsp; Dated: 21-07-2007
+                    </div>
+                </div>
+                <div class="circular-actions">
+                    <!-- PDF -->
+                    <a href="../assets/documents/circulars/G.O.Ms.No.522.pdf" target="_blank"
+                        class="btn btn-sm btn-outline-primary">
+                        <i class="bi bi-file-earmark-pdf"></i> View PDF
+                    </a>
+                </div>
+            </div>
+
+            <div class="circular-item">
+                <div>
+                    <div class="circular-title">
+                        Lr.No. 158/SC.F/AP/A1/2014-1
+                        <span class="badge-year">2014–2015</span>
+                    </div>
+                    <div class="circular-meta">
+                        Circular No. 03 &nbsp;•&nbsp; Dated: 28-08-2014.
+                    </div>
+                </div>
+                <div class="circular-actions">
+                    <!-- PDF -->
+                    <a href="../assets/documents/circulars/Lr.No. 158SC.FAPA12014-1, G A  (SC-D) Department, dated 28.08.2014.pdf"
+                        target="_blank" class="btn btn-sm btn-outline-primary">
+                        <i class="bi bi-file-earmark-pdf"></i> View PDF
+                    </a>
+                </div>
+            </div>
+
+            <div class="circular-item">
+                <div>
+                    <div class="circular-title">
+                        Consultation with the A.P. Vigilance Commission on (1) Inquiry Report and (2) Revocation of
+                        suspension
+                        <span class="badge-year">2025–2026</span>
+                    </div>
+                    <div class="circular-meta">
+                        Circular No. 04 &nbsp;•&nbsp; Dated: 07-08-2025.
+                    </div>
+                </div>
+                <div class="circular-actions">
+                    <!-- HTML page -->
+                    <a href="../assets/documents/circulars/2025GAD_MS81_E.pdf" target="_blank"
+                        class="btn btn-sm btn-outline-primary">
+                        <i class="bi bi-file-earmark-pdf"></i> View PDF
+                    </a>
+                </div>
+            </div>
+
+            <div class="circular-item">
+                <div>
+                    <div class="circular-title">
+                        Memo.No.2985761/SC.F/A1/2025-1 Strike
+                        off the name from the Respondents at the admission stage before the Hon'ble High Court of
+                        A.P
+                        <span class="badge-year">2025–2026</span>
+                    </div>
+                    <div class="circular-meta">
+                        Circular No. 05 &nbsp;•&nbsp; Dated: 11-11-2025.
+                    </div>
+                </div>
+                <div class="circular-actions">
+                    <!-- PDF -->
+                    <a href="../assets/documents/circulars/Memo No 2985761 SC.F A1 2021-1 GA(C.F) DEPT Dated 11-11-2025.pdf" target="_blank"
+                        class="btn btn-sm btn-outline-primary">
+                        <i class="bi bi-file-earmark-pdf"></i> View PDF
+                    </a>
+                </div>
+            </div>
+
+            <!-- Add more <div class="circular-item"> blocks as needed -->
+
+        </section>
+
+        <div class="text-center mt-5">
+            <a href="../index.html" class="btn back-btn px-4"><i class="bi bi-arrow-left"></i> Back to Home</a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h5>Disclaimer</h5>
+                    <p>
+                        The contents of this site are informatory in nature.
+                        <br>
+                        You are advised to verify the same from Commission's office.
+                        <br>
+                        For any clarification, please
+                        mail to
+                        <a href="mailto:commr_vc@ap.gov.in" class="text-decoration-none text-primary">
+                            commr_vc@ap.gov.in
+                        </a>
+                    </p>
+                </div>
+            </div>
+            <hr style="border-color: rgba(255,255,255,0.2)" />
+            <p class="text-center small mb-0">
+                © 2025 Andhra Pradesh Vigilance Commission | Website Designed, Developed
+                and Hosted by NIC, Andhra Pradesh
+                <img src="../assets/Nic_logo.jpg" alt="NIC Logo" height="32" class="ms-2"
+                    style="vertical-align: middle" />
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        // Mobile Navbar Toggle
+        function toggleMobileMenu() {
+            document.querySelector(".nav-menu").classList.toggle("open");
+        }
+
+        // Font Controls
+        let defaultSize = 16, currentSize = defaultSize;
+        const html = document.documentElement;
+        document.getElementById("fontPlus").onclick = () => html.style.fontSize = (++currentSize) + "px";
+        document.getElementById("fontNormal").onclick = () => html.style.fontSize = (currentSize = defaultSize) + "px";
+        document.getElementById("fontMinus").onclick = () => {
+            if (currentSize > 10) html.style.fontSize = (--currentSize) + "px";
+        };
+    </script>
+</body>
+
+</html>
