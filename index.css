@@ -22,7 +22,7 @@ html {
 }
 
 @media (max-width: 768px) {
-    html{
+    html {
         scroll-padding-top: 220px;
         transition: font-size 0.5s ease-in-out;
     }
@@ -79,12 +79,8 @@ body {
 
 /* Tablets */
 @media (max-width: 768px) {
-    .gov-topbar {
-        padding: 10px;
-    }
-
     .gov-right {
-        margin-top: 8px;
+        margin-top: 2px;
         gap: 10px;
     }
 }
@@ -98,13 +94,12 @@ body {
     }
 
     .font-controls {
-        justify-content: center;
+        justify-content: end;
     }
 
     .gov-right {
         width: 100%;
         justify-content: center;
-        margin-top: 10px;
     }
 
     .skip-btn {
@@ -131,41 +126,18 @@ body {
 /* ---------------- HEADER SECTION ---------------- */
 header {
     background: var(--navy);
-    padding: 12px 20px;
+    padding: 8px 20px;
     position: sticky;
     top: 0;
     z-index: 9998;
 }
 
-.hwrap {
-    position: relative;
+.page-title-content {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
 }
 
-.page-title-content {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-}
-
-/* Adjust layout on smaller screens */
-@media (max-width: 768px) {
-  .page-title-content {
-    position: static;       /* remove absolute */
-    transform: none;        /* disable centering */
-    text-align: right;      /* align content to right */
-    align-items: flex-end;  /* if it's a flex container */
-    width: 100%;
-    margin-right: 10px;   
-    order: 0;  /* optional spacing from edge */
-  }
-  .cm-section{
-    order: 1;
-  }
-}
 
 
 /* Logos */
@@ -681,7 +653,7 @@ header {
     padding-bottom: 6px;
 }
 
-/* Titles */
+/* Titles - Make them look clickable */
 .nav-title {
     font-size: 1rem;
     /* text-sm */
@@ -693,14 +665,44 @@ header {
     color: #D1D5DB;
     /* gray-400 */
     margin: 0;
+    cursor: pointer;
+    /* Crucial: Indicates clickability */
+    user-select: none;
+    /* Prevent text selection on click */
 }
 
-/* Links container */
+/* Optional: Add an icon to indicate the dropdown state */
+.nav-title::after {
+    content: "\25B6";
+    /* Right-pointing triangle/arrow */
+    font-size: 0.7em;
+    margin-left: 8px;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.nav-title.active::after {
+    transform: rotate(90deg);
+    /* Down-pointing when active/open */
+}
+
+/* Links container - Use a max-height transition for smooth collapse */
 .nav-links {
     display: flex;
     flex-direction: column;
     gap: 4px;
     /* space-y-1 */
+    max-height: 500px;
+    /* Large enough to show all links */
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+    opacity: 1;
+}
+
+/* Links container - Hidden (Collapsed) State */
+.nav-links.collapsed {
+    max-height: 0;
+    opacity: 0;
 }
 
 /* Sidebar links */
@@ -752,8 +754,7 @@ footer a:hover {
     color: var(--brand-secondary);
 }
 
-footer p{
+footer p {
     text-align: justify;
     text-align: center;
 }
-
