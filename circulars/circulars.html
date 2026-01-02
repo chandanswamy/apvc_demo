@@ -131,6 +131,13 @@
             color: #1b4d89;
         }
 
+        .circular-subject {
+            font-size: 0.95rem;
+            margin-top: 0.25rem;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
         .circular-meta {
             font-size: 0.85rem;
             color: #555;
@@ -193,105 +200,22 @@
             <p>Official circulars, instructions and administrative communications</p>
         </div>
 
+        <!-- Search Bar -->
+        <div class="row mb-3">
+            <div class="col-md-6 mx-auto">
+                <div class="input-group">
+                    <span class="input-group-text bg-light">
+                        <i class="bi bi-search"></i>
+                    </span>
+                    <input type="text" id="searchInput" class="form-control"
+                        placeholder="Search by GO No, Memo, Subject, Year or Date">
+                </div>
+            </div>
+        </div>
+
+
         <!-- Simple Circular List -->
-        <section class="report-list mt-4">
-
-            <!-- Example circulars – you can replace with real ones -->
-
-            <div class="circular-item">
-                <div>
-                    <div class="circular-title">
-                        G.O.Ms.No.421 A.P. Vigilance Commission — Scheme defining jurisdiction, powers etc.
-                        <span class="badge-year">1993–1994</span>
-                    </div>
-                    <div class="circular-meta">
-                        Dated: 03-08-1993.
-                    </div>
-                </div>
-                <div class="circular-actions">
-                    <!-- PDF -->
-                    <a href="../assets/documents/circulars/G.O.Ms.No.421, G A  (SC-D) Department, dated 3rd August, 1993..pdf"
-                        target="_blank" class="btn btn-sm btn-outline-primary">
-                        <i class="bi bi-file-earmark-pdf"></i> View PDF
-                    </a>
-                </div>
-            </div>
-
-            <div class="circular-item">
-                <div>
-                    <div class="circular-title">
-                        G.O.Ms.No.522 Definition of Vigilance Angle
-                        <span class="badge-year">2007–2008</span>
-                    </div>
-                    <div class="circular-meta">
-                        Dated: 21-07-2007
-                    </div>
-                </div>
-                <div class="circular-actions">
-                    <!-- PDF -->
-                    <a href="../assets/documents/circulars/G.O.Ms.No.522.pdf" target="_blank"
-                        class="btn btn-sm btn-outline-primary">
-                        <i class="bi bi-file-earmark-pdf"></i> View PDF
-                    </a>
-                </div>
-            </div>
-
-            <div class="circular-item">
-                <div>
-                    <div class="circular-title">
-                        Lr.No. 158/SC.F/AP/A1/2014-1
-                        <span class="badge-year">2014–2015</span>
-                    </div>
-                    <div class="circular-meta">
-                        Dated: 28-08-2014.
-                    </div>
-                </div>
-                <div class="circular-actions">
-                    <!-- PDF -->
-                    <a href="../assets/documents/circulars/Lr.No. 158SC.FAPA12014-1, G A  (SC-D) Department, dated 28.08.2014.pdf"
-                        target="_blank" class="btn btn-sm btn-outline-primary">
-                        <i class="bi bi-file-earmark-pdf"></i> View PDF
-                    </a>
-                </div>
-            </div>
-
-            <div class="circular-item">
-                <div>
-                    <div class="circular-title">
-                        G.O.MS.No. 81, GENERAL ADMINISTRATION (SER.C) DEPARTMENT
-                        <span class="badge-year">2025–2026</span>
-                    </div>
-                    <div class="circular-meta">
-                        Dated: 07-08-2025.
-                    </div>
-                </div>
-                <div class="circular-actions">
-                    <!-- HTML page -->
-                    <a href="../assets/documents/circulars/2025GAD_MS81_E.pdf" target="_blank"
-                        class="btn btn-sm btn-outline-primary">
-                        <i class="bi bi-file-earmark-pdf"></i> View PDF
-                    </a>
-                </div>
-            </div>
-
-            <div class="circular-item">
-                <div>
-                    <div class="circular-title">
-                        Memo.No.285761/SC.F/A1 t2025-1, GENERAL ADMINISTRATION (SC.F) DEPARTMENT
-                        <span class="badge-year">2025–2026</span>
-                    </div>
-                    <div class="circular-meta">
-                        Dated: 11-11-2025.
-                    </div>
-                </div>
-                <div class="circular-actions">
-                    <!-- PDF -->
-                    <a href="../assets/documents/circulars/Memo.No.298576-SC-F-A1-2025-1 dt 11-11-2025.pdf"
-                        target="_blank" class="btn btn-sm btn-outline-primary">
-                        <i class="bi bi-file-earmark-pdf"></i> View PDF
-                    </a>
-                </div>
-            </div>
+        <section class="report-list mt-4" id="circularList">
 
             <!-- Add more <div class="circular-item"> blocks as needed -->
 
@@ -348,6 +272,178 @@
         document.getElementById("fontMinus").onclick = () => {
             if (currentSize > 10) html.style.fontSize = (--currentSize) + "px";
         };
+    </script>
+
+    <script>
+        /*
+        DATA SOURCE
+        ===========
+        Add all 95 rows here.
+        Structure is intentionally simple and explicit.
+        */
+
+        const circulars = [
+            // NOTE: PDF filenames are corrected to EXACT user-provided names (number is part of filename)
+
+            { date: "21.06.1966", circularNo: "Memo.No.4106/SC.C/65-3, Genl.Admn. (SC.C) Dept., dt.21.06.1966", subject: "Entrustment of only important and complicated cases to Anti Corruption Bureau.", pdf: "1 - Memo.No.4106 dt.21.06. 1966-compressed.pdf" },
+            { date: "24.08.1968", circularNo: "Memo.No.3301/SC.D/66-9, Genl.Admn. (SC.D) Dept., dt.24.08.1968", subject: "Role of Collectors in the Districts as Chief Vigilance Officers.", pdf: "2 - Memo.No.3301 - Copy-compressed.pdf" },
+            { date: "25.11.1975", circularNo: "U.O.Note No.2498/SC.D/75-4, Genl.Admn. (SC.D) Dept., dt.25.11.1975", subject: "Issue of sanction of prosecution of Government Servants, State and Subordinate services, by Government alone.", pdf: "3 - U.O.Note No.2498-compressed.pdf" },
+            { date: "14.07.1976", circularNo: "Memo.No.1483/SC.D/76-1, Genl.Admn. (SC.D) Dept., dt.14.07.1976", subject: "Issue of sanction of prosecution in cases investigated by A.C.B., within two months", pdf: "4 - Memo.No.1483-compressed.pdf" },
+            { date: "10.05.1977", circularNo: "Memo.No.81/Ser.D/77-2, Genl.Admn. (Ser.D) Dept., dt.10.05.1977", subject: "Avoidance of reference to Anti Corruption Bureau and Vigilance Commission in charge memo etc.", pdf: "5 - Memo.No.81-compressed.pdf" },
+            { date: "07.10.1977", circularNo: "Memo.No.1994/SC.D/77-1, Genl.Admn. (SC.D) Dept., dt.07.10.1977", subject: "Advice of Vigilance Commission as to further action on Judgments.", pdf: "6 - Memo.No.1994-compressed.pdf" },
+            { date: "02.03.1982", circularNo: "Memo.No.295/SC.D/80-10, Genl.Admn. (SC.D) Dept., dt.02.03.1982", subject: "Strengthening and improving the functioning of Chief Vigilance Officers and Vigilance Officers.", pdf: "7 - Memo.No.295-compressed.pdf" },
+            { date: "27.12.1983", circularNo: "Memo.No.442/SC.E/83-1, Genl.Admn. (SC.E) Dept., dt.27.12.1983", subject: "Furnishing of property statements of suspect officers to A.C.B.", pdf: "8 - Memo.No.442-compressed.pdf" },
+            { date: "14.06.1984", circularNo: "Memo.No.352/SC.E/84-1, Genl.Admn. (SC.E) Dept., dt.14.06.1984", subject: "Furnishing of property statements in six proformae along with pay and service particulars of suspect officers to Anti-Corruption Bureau expeditiously.", pdf: "9 - Memo.No.352-compressed.pdf" },
+            { date: "10.07.1986", circularNo: "Memo.No.762/SC.D/86-1, Genl.Admn. (SC.D) Dept., dt.10.07.1986", subject: "Service particulars, pay particulars, proformae statements etc, to be furnished to Anti Corruption Bureau, in two months time.", pdf: "10 - Memo.No.762-compressed.pdf" },
+            { date: "08.08.1986", circularNo: "Memo.No.1496/SC.E/86-2, Genl.Admn. (SC.E) Dept., dt.08.08.1986", subject: "Clarifications on entrustment of departmental inquiries to Commissioner of Inquiries.", pdf: "11 - Memo.No.1496-compressed.pdf" },
+            { date: "02.12.1986", circularNo: "Memo.No.3325/SC.E/86-1, Genl.Admn.(SC.E) Dept., dt.02.12.1986", subject: "Entrustment of inquiries to Commissioner of Inquiries.", pdf: "12 - Memo.No.3325-compressed.pdf" },
+            { date: "13.03.1987", circularNo: "Memo.No.490/SC.E/87-1, Genl.Admn. (SC.E) Dept., dt.13.03.1987", subject: "Entrustment of inquiries to Commissioner of Inquiries – check-list prescribed.", pdf: "13 - Memo.No.490-compressed.pdf" },
+            { date: "20.07.1987", circularNo: "U.O.Note No.450/SC.D/87-1, Genl.Admn.(SC.D) Dept., dt.20.07.1987", subject: "Sanction order to be issued in 45 days and other procedural requirements to be fulfilled.", pdf: "14 - UO. No.450-compressed.pdf" },
+            { date: "20.10.1987", circularNo: "U.O.Note No.1798/SC.E/87-1, Genl.Admn. (SC.E) Dept., dt.20.10.1987", subject: "Avoiding of reference to Anti Corruption Bureau in correspondence.", pdf: "15 - UO. No.1798-compressed.pdf" },
+            { date: "30.11.1987", circularNo: "U.O.Note No.1045/SC.D/87-3, Genl.Admn. (SC.D) Dept., dt.30.11.1987", subject: "Records that should be sent by Anti Corruption Bureau for issue of Sanction Order by the competent authority", pdf: "16 - UO. No.1045-compressed.pdf" },
+            { date: "01.02.1988", circularNo: "Memo.No.44/SC.D/88-1, Genl.Admn.(SC.D) Dept., dt.01.02.1988", subject: "Anti Corruption Bureau reports dealing", pdf: "17 - UO. No.44-compressed.pdf" },
+            { date: "17.02.1988", circularNo: "Memo.No.1798/SC.E/87-4, Genl.Admn. (SC.E) Dept., dt.17.02.1988", subject: "Entrustment of departmental inquiries to Commissioner of Inquiries", pdf: "18 - UO. No.1045-compressed.pdf" },
+            { date: "23.02.1988", circularNo: "Memo.No.2665/SC.E/87-3 Genl.Admn. (SC.E) Dept., dt.23.02.1988", subject: "Commissioner of Inquiries to be appointed as Inquiry Officer by designation, not by name", pdf: "19 - Memo.No.2665-compressed.pdf" },
+            { date: "25.02.1988", circularNo: "Memo.No.35/SC.D/88-2, Genl.Admn. (SC.D) Dept., dt.25.02.1988", subject: "Anti Corruption Bureau to send Final Reports in cases against retired Government Servants, to Government for sanction under Section 197 Cr.P.C", pdf: "20 - Memo.No.35-compressed.pdf" },
+            { date: "20.04.1988", circularNo: "Memo.No.2899/SC.F/87-1, Genl.Admn. (SC.F) Dept., dt.20.04.1988", subject: "Commissioner of Inquiries - cases of NGOs involved with Gazetted Officers also to be referred for Joint Inquiry", pdf: "21 - Memo.No.2899-compressed.pdf" },
+            { date: "06.08.1988", circularNo: "Memo.No.190/Ser.C/88-2, Genl.Admn. (Ser.C) Dept., dt.06.08.1988", subject: "Acknowledgment of annual property statements and reports of property transactions - proformae prescribed", pdf: "22 - Memo.No.190-compressed.pdf" },
+            { date: "22.02.1989", circularNo: "G.O.Rt.No.732, Genl.Admn. (SC.F) Dept., dt.22.02.1989", subject: "Setting up of Commissionerate of Inquiries for conducting departmental inquiries", pdf: "23 - G.O.Rt.732-compressed.pdf" },
+            { date: "13.07.1989", circularNo: "Memo.No.2866/SC.F/87-3, Genl.Admn. (SC.F) Dept., dt.13.07.1989", subject: "Disciplinary authorities to furnish charge memo, statements of witnesses and final order to A.C.B., on request.", pdf: "24 - Memo.No.2866-compressed.pdf" },
+            { date: "16.08.1989", circularNo: "U.O.Note No.1041/SC.F/88-4, Genl.Admn. (SC.F) Dept., dt.16.08.1989", subject: "Entrustment of departmental inquiries to Commissionerate of Inquiries - framing of charges.", pdf: "25 - U.O.No.1041-compressed.pdf" },
+            { date: "23.10.1990", circularNo: "Memo.No.747/Courts.E/90-3, Home (Courts.E) Dept., dt.23.10.1990", subject: "Sanction of prosecution should be a speaking order.", pdf: "26 - Memo.No.747-compressed.pdf" },
+            { date: "05.11.1990", circularNo: "U.O.Note No.1418/SC.D/90-2, Genl.Admn.(SC.D) Dept., dt.05.11.1990", subject: "Employees convicted by Court expeditious action to be taken for dismissal from service.", pdf: "27 - U.O.No.1418-compressed.pdf" },
+            { date: "29.06.1993", circularNo: "G.O.Ms.No.368, Genl.Admn. (SC.D) Dept., dt.29.06.1993", subject: "Reconstitution of Andhra Pradesh Vigilance Commission.", pdf: "28 - G.O.Rt.No.368-compressed.pdf" },
+            { date: "03.08.1993", circularNo: "G.O.Ms.No.421, Genl.Admn. (SC.D) Dept., dt.03.08.1993", subject: "Scheme defining Jurisdiction, Powers etc., of Vigilance Commission.", pdf: "29 - G.O.Rt.No.421-compressed.pdf" },
+            { date: "02.09.1993", circularNo: "G.O.Ms.No.470, Genl.Admn. (SC.D) Dept., dt.02.09.1993", subject: "Vigilance Commissioner is Head of the Department", pdf: "30 - G.O.Rt.No.470-compressed.pdf" },
+            { date: "18.03.1994", circularNo: "U.O.Note No.266/SC.D/94-2, Genl.Admn.(SC.D) Dept., dt.18.03.1994", subject: "Vigilance Commission to tender advice on A.C.B. reports.", pdf: "31 - U.O.No.266-compressed.pdf" },
+            { date: "07.06.1994", circularNo: "U.O.Note No.314/SC.D/94-3, Genl.Admn.(SC.D) Dept., dt.07.06.1994", subject: "Withdrawal of prosecution in misappropriation and other vigilance cases only with advice of Vigilance Commission", pdf: "32 - U.O.No.314-compressed.pdf" },
+            { date: "10.10.1994", circularNo: "Lr.No.66/VC.A2/93-3, dt.10.10.1994", subject: "A.P.V.C communicating Andhra Pradesh Vigilance Commission Procedural Instructions.", pdf: "33 - Lr.No.66-compressed.pdf" },
+            { date: "16.09.1995", circularNo: "U.O.Note No.2751/SC.E/95-1, Genl.Admn.(SC.E) Dept., dt.16.09.1995", subject: "Sanction of prosecution to be issued within stipulated time", pdf: "34 - U.O.No.2751-compressed.pdf" },
+            { date: "19.12.1995", circularNo: "Memo.No.3148/SC.E/95-1, Genl.Admn. (SC.E) Dept., dt.19.12.1995", subject: "Vigilance Commission’s advice deviation to be avoided.", pdf: "35 - Memo.No.3148-compressed.pdf" },
+            { date: "22.04.1996", circularNo: "U.O.Note No.1184/SC.E/96-1, Genl.Admn. (SC.E) Dept., dt.22.04.1996", subject: "Cases of deviation from Vigilance Commission’s advice to be circulated to Chief Minister, not Governor", pdf: "36 - U.O.No.1184-compressed.pdf" },
+            { date: "14.11.1996", circularNo: "Circular Memo.No.2222/SC.E/96-1 Genl.Admn. (SC.E) Dept., dt.14.11.1996", subject: "Section Officers and ASOs not to offer first person suggestions or opinion.", pdf: "37 - Circular Memo.No.2222-compressed.pdf" },
+            { date: "09.05.1997", circularNo: "U.O.Note No.1007/SC.E/97-1, Genl.Admn. (SC.E) Dept., dt.09.05.1997", subject: "Not necessary to refer statement of defence to Vigilance Commission.", pdf: "38 - U.O.No.1007-compressed.pdf" },
+            { date: "04.08.1997", circularNo: "U.O.Note No.962/SC.E/97-1, Genl.Admn.(SC.E) Dept., dt.04.08.1997", subject: "Not to mention reference of A.C.B. or Vigilance Commission in correspondence.", pdf: "39 - U.O.No.962-compressed.pdf" },
+            { date: "05.01.1998", circularNo: "U.O.Note No.2381/SC.E/97-1, Genl.Admn. (SC.E) Dept., dt.05.01.1998", subject: "Advice of Vigilance Commission safe custody to be ensured", pdf: "40 - U.O.No.2381-compressed.pdf" },
+            { date: "17.02.1998", circularNo: "Memo.No.1798/SC.E/87-4, Genl.Admn. (SC.E) Dept., dt.17.02.1998", subject: "Commissionerate of Inquiries procedure required to be followed by Departments for entrustment of cases", pdf: "41 - Memo.No.1798-compressed.pdf" },
+            { date: "27.04.1998", circularNo: "Memo.No.3037/SC.E/97-1, Genl.Admn. (SC.E) Dept., dt.27.04.1998", subject: "Commissionerate of Inquiries - types of cases that can be referred.", pdf: "42 - Memo.No.3037-compressed.pdf" },
+            { date: "20.10.1998", circularNo: "Memo.No.1849/SC.E3/98-1, Genl.Admn. (SC.E) Dept., dt.20.10.1998", subject: "State Industrial Promotion Board, excluded from Vigilance Commission jurisdiction", pdf: "43 - Memo.No.1849-compressed.pdf" },
+            { date: "02.12.1998", circularNo: "U.O.Note No.2670/SC.E3/98-1, Genl.Admn. (SC.E) Dept., dt.02.12.1998", subject: "Vigilance Commission’s advice in departmental inquiries.", pdf: "44 - U.O.No.2670-compressed.pdf" },
+            { date: "04.01.1999", circularNo: "U.O.Note No.2985/SC.E1/98-1, Genl.Admn. (SC.E) Dept., dt.04.01.1999", subject: "Reference of A.C.B., Vigilance Commission- not to be mentioned in orders.", pdf: "45 - U.O.No.2985-compressed.pdf" },
+            { date: "26.02.1999", circularNo: "U.O.Note No.598/SC.E3/99-1, Genl.Admn. (SC.E) Dept., dt.26.02.1999", subject: "Vigilance Commission - consultation at lower than Government level to be ensured.", pdf: "46 - U.O.No.598-compressed.pdf" },
+            { date: "30.08.1999", circularNo: "Circular Memo.No.698/Special.B3/99-1, Genl. Admn.(Spl.B) Dept., dt.30.08.1999", subject: "Vigilance Commission scheme to be strictly followed - disciplinary action be taken for violation of scheme.", pdf: "47 - Circular Memo.No.698-compressed.pdf" },
+            { date: "28.10.1999", circularNo: "Circular Memo.No.706/Spl.A3/99, Genl.Admn.(Spl.A) Dept., dt.28.10.1999", subject: "Anonymous, pseudonymous complaints - not to take any action", pdf: "48 - Circular Memo.No.706-compressed.pdf" },
+            { date: "22.12.1999", circularNo: "U.O.Note No.1804/Spl.B3/99-1, Genl.Admn. (Spl.B) Dept., dt.22.12.1999", subject: "Scheme of Vigilance Commission- appointment of Chief Vigilance Officers in Departments", pdf: "49 - U.O.No.1804-compressed.pdf" },
+            { date: "13.03.2000", circularNo: "U.O.Note No.302/Spl.B/2000-1, Genl.Admn. (Spl.B) Dept., dt.13.03.2000", subject: "Correspondence with Vigilance Commission not to be quoted", pdf: "50 - U.O.No.302-compressed.pdf" },
+            { date: "01.05.2000", circularNo: "G.O.Ms.No.147, Genl.Admn.(Spl.B) Dept., dt.01.05.2000", subject: "Scheme of Vigilance Commission defining jurisdiction, powers etc. - clarification issued.", pdf: "51 - GO.Ms.No.147-compressed.pdf" },
+            { date: "31.07.2000", circularNo: "Circular Memo.No.1728/Spl.B(3)/99-2, Genl. Admn. (Spl.B) Dept., dt.31.07.2000", subject: "Recommendations / advice of Vigilance Commission to be given due consideration.", pdf: "52 - Circular Memo.No.1728-compressed.pdf" },
+            { date: "21.08.2000", circularNo: "U.O.Note No.1801/Spl.B/2000-1, Genl.Admn. (Spl.B) Dept., dt.21.08.2000", subject: "Vigilance Commission - quarterly review of vigilance, disciplinary and criminal cases.", pdf: "53 - U.O.No.1801-compressed.pdf" },
+            { date: "14.11.2000", circularNo: "U.O.Note No.1788/Spl.B/2000-1, Genl.Admn. (Spl.B) Dept., dt.14.11.2000", subject: "Combating corruption in public services - separation of vigilance and disciplinary matters from service matters.", pdf: "54 - U.O.No.1788-compressed.pdf" },
+            { date: "25.05.2001", circularNo: "Memo.No.2045/Spl.B/2000-3, Genl. Admn. (Spl.B) Dept., dt.25.05.2001", subject: "Speedy disposal of trap and disproportionate assets cases.", pdf: "55 - Memo.No.2045-compressed.pdf" },
+            { date: "18.07.2001", circularNo: "U.O.Note No.757/Spl.B/2001-1, Genl.Admn. (Spl.B) Dept., dt.18.07.2001", subject: "Vigilance Commission - maintenance of secrecy of files dealing with disciplinary matters, by Departments.", pdf: "56 - U.O.No.757-compressed.pdf" },
+            { date: "26.07.2001", circularNo: "U.O.Note No.235/Spl.B/2001-1, Genl.Admn.(Spl.B) Dept., dt.26.07.2001", subject: "Types of cases to be referred to Vigilance Commission for advice.", pdf: "57 - U.O.No.235-compressed.pdf" },
+            { date: "01.04.2002", circularNo: "Circular Memo.No.944/SPL.B/99-5, Genl. Admn. (Spl.B) Dept., dt.01.04.2002", subject: "Vigilance Commission to deal directly with Heads of Departments and lower officials.", pdf: "58 - Circular memo. No. 944-compressed.pdf" },
+            { date: "19.06.2002", circularNo: "Circular Memo.No.609/Spl.B/99-8, Genl.Admn. (Spl.B) Dept., dt.19.06.2002", subject: "Reasons for not sanctioning prosecution to be recorded and communicated", pdf: "59 - Circular memo. No. 609-compressed.pdf" },
+            { date: "22.06.2002", circularNo: "Memo.No.256/Spl.B/2002-1, Genl.Admn. (Spl.B) Dept., dt.22.06.2002", subject: "Proformae for quarterly review of vigilance cases", pdf: "60 - Circular memo. No.256-compressed.pdf" },
+            { date: "15.03.2003", circularNo: "Memo.No.205/Spl.B/2003-1, Genl.Admn. (Spl.B) Dept., dt.15.03.2003", subject: "Avoidance of quoting references and correspondence of APVC", pdf: "61 - Memo.No.205-compressed.pdf" },
+            { date: "04.04.2003", circularNo: "G.O.Ms.No.104 Genl.Admn. (Spl.B) Dept., dt.04.04.2003", subject: "Job chart for Chief Vigilance Officers / Vigilance Officers.", pdf: "62 - G.O.MS.No.104-compressed.pdf" },
+            { date: "26.05.2003", circularNo: "U.O.Note No.36/Spl.C/2003-1, Genl.Admn. (Spl.C) Dept., dt.26.05.2003", subject: "Sending of Reports of V&E to the Departments through A.P. Vigilance Commission.", pdf: "63 - U.O.No.36-compressed.pdf" },
+            { date: "09.06.2003", circularNo: "G.O.Ms.No.174, Genl. Admn.(SC.E) Dept., dt.09.06.2003", subject: "Bringing Commissionerate of Inquiries under Vigilance Commission", pdf: "64 - G.O.Ms.No.174-compressed.pdf" },
+            { date: "20.01.2004", circularNo: "G.O.Rt.No.319, Genl. Admn. (Spl.C) Dept., dt.20.01.2004", subject: "Constitution of Vigilance Cells and appointment of Vigilance Officers.", pdf: "65 - G.O.Rt.319-compressed.pdf" },
+            { date: "03.02.2004", circularNo: "G.O.Ms.No.25, Genl. Admn. (Ser.C) Dept., dt.03.02.2004", subject: "Guidelines on misappropriation cases.", pdf: "66 - G.O.Ms.No.25-compressed.pdf" },
+            { date: "09.06.2004", circularNo: "Circular Memo.No.268/Spl.C/A1/2003-2, Genl. Admn. (Spl.C) Dept., dt.09.06.2004", subject: "Communication of Judgment of A.P.High Court on sanction of prosecution once accorded cannot be withdrawn.", pdf: "67 - Circular Memo.268-compressed.pdf" },
+            { date: "19.10.2004", circularNo: "G.O.Ms.No.336, Genl. Admn. (Spl.C) Dept., dt.19.10.2004", subject: "Instructions on Commissionerate of Inquiries.", pdf: "68 - G.O.Ms.No.336-compressed.pdf" },
+            { date: "06.12.2004", circularNo: "Circular Memo.No.664/Spl.C/A1/2004-1, Genl. Admn. (Spl.C) Dept., dt.06.12.2004", subject: "Instructions on consultation with Vigilance Commission", pdf: "69 - Circular Memo.No.664-compressed.pdf" },
+            { date: "08.12.2004", circularNo: "Circular Memo.No.735/Spl.C/2004-1, Genl. Admn. (Spl.C) Dept., dt.08.12.2004", subject: "Furnishing of Action Taken Report to the D.G., V&E", pdf: "70 - Circular Memo.No.735-compressed.pdf" },
+            { date: "28.04.2005", circularNo: "Circular Memo.No.233/Spl.C/A1/2005-1, Genl. Admn. (Spl.C) Dept., dt.28.04.2005", subject: "Penalty to be commensurate with the gravity of charges", pdf: "71 - Circular Memo.No.233-compressed.pdf" },
+            { date: "28.10.2005", circularNo: "G.O.Ms.No.479, G.A. (Spl.C) Dept., dt.28.10.2005", subject: "Orders on empowering the A.P.Vigilance Commissioner to give protection to Whistleblowers.", pdf: "72 - G.O.Ms.No.479-compressed.pdf" },
+            { date: "21.07.2007", circularNo: "G.O.Ms.No.522, G.A. (Spl.C) Dept., dt.21.07.2007", subject: "Definition of ‘Vigilance Angle’", pdf: "73 - G.O.Ms.No.522-compressed.pdf" },
+            { date: "02.08.2007", circularNo: "Circular Memo.No.352/Spl.C/A1/2007-1, Genl. Admn. (Spl.C) Dept., dt.02.08.2007", subject: "Instructions on sanction of prosecution once sanctioned cannot be withdrawn.", pdf: "74 - Circular Memo.No.352-compressed.pdf" },
+            { date: "21.01.2008", circularNo: "Circular Memo.No.1271/Ser.C/2008, Genl. Admn. (Ser.C) Dept., dt.21.01.2008", subject: "Instructions on expeditious disposal of inquiry", pdf: "75 - Circular Memo.No.1271-compressed.pdf" },
+            { date: "15.10.2008", circularNo: "Memo.No.623/Spl.C/A1/2008-1, Genl. Admn. (Spl.C) Dept., dt.15.10.2008", subject: "Instructions on A.C.B / Vigilance Cases.", pdf: "76 - Circular Memo.No.623-2008-1-compressed.pdf" },
+            { date: "15.10.2008", circularNo: "Memo.No.623/Spl.C/A1/2008-4, Genl. Admn. (Spl.C) Dept., dt.15.10.2008", subject: "Instructions on arrests of Accused Officers in trap / disproportionate assets cases.", pdf: "77 - Circular Memo.No.623-2008-4-compressed.pdf" },
+            { date: "29.12.2008", circularNo: "Memo.No.496/Spl.C/A1/2008-7, Genl. Admn. (Spl.C) Dept., dt.29.12.2008", subject: "Appointment of CVOs in Departments of Secretariat.", pdf: "78 - Memo.No.496-compressed.pdf" },
+            { date: "20.05.2009", circularNo: "U.O.Note No.177/Spl.C/A1/2009, Genl. Admn. (Spl.C) Dept., dt.20.05.2009", subject: "To follow the A.P. Secretariat Business Rules and Secretariat Instructions, while deviating the advice of Vigilance Commission", pdf: "79 - U.O.No.177-compressed.pdf" },
+            { date: "22.07.2009", circularNo: "U.O.Note No.98/Spl.C/A1/2009-1, Genl. Admn. (Spl.C) Dept., dt.22.07.2009", subject: "Instructions on consultation with A.P.V.C. in respect of Appeal, Revision & Review Petitions.", pdf: "80 - U.O.No.98-compressed.pdf" },
+            { date: "09.10.2009", circularNo: "U.O.Note No.503/Spl.C/A1/2009, Genl. Admn. (Spl.C) Dept., dt.09.10.2009", subject: "Instructions on conviction cases.", pdf: "81 - U.O.No.503.pdf" },
+            { date: "08.02.2011", circularNo: "Circular Memo.No.785/Spl.C/A1/2010, Genl. Admn. (Spl.C) Dept., dt.08.02.2011", subject: "Deviation from the advice of the Vigilance Commissioner - Sanction of prosecution in the form of a speaking order.", pdf: "82 - Circular Memo.No.785-compressed.pdf" },
+            { date: "18.02.2011", circularNo: "Memo.No.8/Spl.C/A1/2011, G.A. (Spl.C) Dept., dt.18.02.2011", subject: "Instructions on furnishing of draft articles of charges etc. through the A.P.V.C", pdf: "83 - Memo.No.8-compressed.pdf" },
+            { date: "10.03.2011", circularNo: "Circular Memo.No.77/Spl.C/A1/2011, Genl. Admn. (Spl.C) Dept., dt.10.03.2011", subject: "Instructions on sanction of prosecution", pdf: "84 - Circular Memo.No.77-compressed.pdf" },
+            { date: "03.02.2014", circularNo: "Circular Memo.No.03/Spl.C/A1/2014, G.A. (Spl.C) Dept., dt.03.02.2014", subject: "Instructions on review of A.C.B. / V.C. cases every month by Senior Officers", pdf: "85 - Circular Memo.No.03-compressed.pdf" },
+            { date: "09.05.2017", circularNo: "G.O.Ms.No.56, Genl. Admn. (SC.F) Dept., dt.09.05.2017", subject: "Rules on the A.P. Special Courts Act, 2016", pdf: "88 - U.O.No.941101-compressed.pdf" },
+            { date: "20.07.2017", circularNo: "G.O.Ms.No.89, Genl. Admn. (SC.F) Dept., dt.20.07.2017", subject: "Notification for Special Courts for the purpose of speedy trial of offences", pdf: "89 - U.O.No.GAD01-POLL0VAC-compressed.pdf" },
+            { date: "11.09.2019", circularNo: "U.O.Note No.941101/Ser.C/2019, Genl. Admn. (Ser.C) Dept., dt.11.09.2019", subject: "Consultation with the A.P.V.C. in cases involving vigilance angle", pdf: "86 - G.O.Ms.No.56, Genl. Admn. (SC.F) Dept., dt.09.05.2017.PDF" },
+            { date: "11.09.2019", circularNo: "U.O.Note No.GAD01-POLL0VAC/2/SC.F/A1/2019-1, Genl. Admn. (Spl.C) Dept., dt.11.09.2019", subject: "Instructions on the Scheme of Vigilance Commission", pdf: "87 - G.O.Ms.No.89, Genl. Admn. (SC.F) Dept., dt.20.07.2017.PDF" },
+            { date: "18.04.2021", circularNo: "G.O.Ms.No.41, Genl. Admn. (Ser.C) Dept., dt.18.04.2021", subject: "Instructions of new timeline of 100 days prescribed for concluding disciplinary proceedings arising out of caught red handed cases", pdf: "90 - G.O.Ms.No.41, Genl. Admn. (Ser.C) Dept., dt.18.04.2021.PDF" },
+            { date: "28.07.2021", circularNo: "G.O.Rt.No.1250, Genl. Admn. (SC.F) Dept., dt.28.07.2021", subject: "Instructions on preventive vigilance", pdf: "91 - G.O.Rt.No.1250, Genl. Admn. (SC.F) Dept., dt.28.07.2021.PDF" },
+            { date: "12.09.2022", circularNo: "G.O.Ms.No.91, G.A (Ser.C) Dept., dt.12.09.2022", subject: "Time line to expedite the process of disciplinary cases at various levels", pdf: "92 - G.O.Ms.No. 91, G.A (Ser.C) Dept., dt. 12.09.2022.pdf" },
+            { date: "07.08.2025", circularNo: "G.O.Ms.No.81, G.A (Ser.C) Dept., dt.07.08.2025", subject: "Consultation with the APVC on inquiry report and revocation of suspension", pdf: "93 - G.O.Ms.No. 81, G.A (Ser.C) Dept., dt. 07.08.2025.pdf" },
+            { date: "07.10.2025", circularNo: "G.O.Ms.No.59, Finance (HR-III-Pension & GPF) Dept., dt.07.10.2025", subject: "Payment of penal interest in case of delay", pdf: "94 - G.O.Ms.No. 59, Finance Dept., dt. 07.10.2025.pdf" },
+            { date: "11.11.2025", circularNo: "Memo No.2985761/SC.F/A1/2025-1, dt.11.11.2025", subject: "Instructions to strike off the name of the V.C. from the respondents in the petitions before Hon’ble High Court", pdf: "95 - Memo No 2985761 SC.F A1 2021-1 GA(C.F) DEPT Dated 11-11-2025.pdf" }
+        ];
+
+        /*
+        RENDER FUNCTION
+        */
+
+        const container = document.getElementById("circularList");
+        const searchInput = document.getElementById("searchInput");
+
+        function renderCirculars(data) {
+            container.innerHTML = "";
+
+            if (data.length === 0) {
+                container.innerHTML = `
+                <div class="text-center text-muted py-4">
+                    <i class="bi bi-info-circle"></i> No matching GO / Circular found
+                </div>
+            `;
+                return;
+            }
+
+            data.forEach(item => {
+                const year = item.date.split('.').pop();
+
+                const div = document.createElement("div");
+                div.className = "circular-item";
+
+                div.innerHTML = `
+                <div>
+                    <div class="circular-title">
+                        ${item.circularNo}
+                        <span class="badge-year">${year}</span>
+                    </div>
+                    <div class="circular-subject">${item.subject}</div>
+                    <div class="circular-meta">Dated: ${item.date}</div>
+                </div>
+                <div class="circular-actions">
+                    <a href="../assets/circulars/${item.pdf}" target="_blank"
+                       class="btn btn-sm btn-outline-primary">
+                        <i class="bi bi-file-earmark-pdf"></i> View PDF
+                    </a>
+                </div>
+            `;
+
+                container.appendChild(div);
+            });
+        }
+
+        // Initial load
+        renderCirculars(circulars);
+
+        // Search filter
+        searchInput.addEventListener("input", function () {
+            const query = this.value.toLowerCase();
+
+            const filtered = circulars.filter(item =>
+                item.circularNo.toLowerCase().includes(query) ||
+                item.subject.toLowerCase().includes(query) ||
+                item.date.toLowerCase().includes(query)
+            );
+
+            renderCirculars(filtered);
+        });
+
     </script>
 </body>
 
