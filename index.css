@@ -411,23 +411,22 @@ header {
 /* CONTAINER */
 .apvc-container {
     max-width: var(--maxwidth);
+    /* Corrected from --maxwidth to match your :root */
     margin: auto;
     padding: 8px;
-
     display: flex;
-
     justify-content: space-between;
-    /* left & right columns */
+
+    /* CRITICAL: Prevents sidebar from stretching, allowing it to stick */
     align-items: flex-start;
-    /* STOP sidebar from stretching */
 }
 
 /* GRID */
 .grid-layout {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     flex-wrap: nowrap;
-    gap: 16px;
+    gap: 4px;
 }
 
 @media (max-width: 900px) {
@@ -437,11 +436,11 @@ header {
 }
 
 .left-column {
-    width: 55%;
+    width: 62%;
 }
 
 .right-column {
-    width: 40%;
+    width: 35%;
 }
 
 @media (max-width: 900px) {
@@ -617,22 +616,29 @@ header {
 
 
 
-/* Sidebar container */
 .sidebar {
     width: 100%;
     max-width: 250px;
-    /* matches sm:w-60 */
     background: #0F4C5C;
-    /* gray-900 */
     color: #f3f4f6;
-    /* gray-100 */
     padding: 24px;
-    /* p-6 */
-    border-radius: 0;
     box-sizing: border-box;
     border-right: 1px solid #000;
+
+    /* STICKY FIXES */
     position: sticky;
-    top: 150px;
+    top: 160px;
+    /* Adjust this to match your header height */
+
+    /* SCROLL FIXES */
+    /* This calculates height: 100% of viewport minus the space at the top */
+    max-height: calc(100vh - 180px);
+    overflow-y: auto;
+    /* Allows the sidebar to scroll if content is too long */
+
+    /* Optional: Custom scrollbar for better look */
+    scrollbar-width: thin;
+    scrollbar-color: #D1D5DB #0F4C5C;
 }
 
 /* Space between major nav sections */
