@@ -56,7 +56,7 @@
 
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
             gap: 18px;
         }
 
@@ -67,7 +67,6 @@
             overflow: hidden;
             background: #f8f9fa;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            aspect-ratio: 4 / 3;
             /* maintains consistent height ratio */
             display: flex;
             align-items: center;
@@ -83,8 +82,8 @@
         /* Ensures image fills area neatly without stretching */
         .gallery-item img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
+            height: auto;
+            object-fit: contain;
             border-radius: 8px;
             transition: transform 0.4s ease;
         }
@@ -193,12 +192,27 @@
             <h2 class="section-title">Vigilance Awareness Week 2025</h2>
             <div class="separator"></div>
 
+            <div class="apvc-card" style="background-color: aliceblue;">
+                <div class="card-content text-center" style="font-size: 20px;">
+                    <p class="px-4 m-0">
+                        <strong>Annual Review Meeting</strong> with all the departments of
+                        <strong>Secretariat</strong> held in the month of December 2025.
+                    </p>
+                </div>
+            </div>
+
             <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="../assets/gallery/vigilance-week/15.jpeg" alt="Vigilance Awareness 15" />
+                </div>
                 <div class="gallery-item">
                     <img src="../assets/gallery/vigilance-week/img_1.jpg" alt="Vigilance Awareness 1" />
                 </div>
                 <div class="gallery-item">
                     <img src="../assets/gallery/vigilance-week/img_2.jpg" alt="Vigilance Awareness 2" />
+                </div>
+                <div class="gallery-item">
+                    <img src="../assets/gallery/vigilance-week/16.jpeg" alt="Vigilance Awareness 16" />
                 </div>
                 <div class="gallery-item">
                     <img src="../assets/gallery/vigilance-week/img_3.jpg" alt="Vigilance Awareness 3" />
@@ -233,6 +247,9 @@
                     <img src="../assets/gallery/annual-report-24-25/img_1.jpg" alt="Annual Report Photo 1" />
                 </div>
                 <div class="gallery-item">
+                    <img src="../assets/gallery/annual-report-24-25/img_5.jpg" alt="Annual Report Photo 5" />
+                </div>
+                <div class="gallery-item">
                     <img src="../assets/gallery/annual-report-24-25/img_2.jpg" alt="Annual Report Photo 2" />
                 </div>
                 <div class="gallery-item">
@@ -240,21 +257,6 @@
                 </div>
                 <div class="gallery-item">
                     <img src="../assets/gallery/annual-report-24-25/img_4.jpg" alt="Annual Report Photo 4" />
-                </div>
-                <div class="gallery-item">
-                    <img src="../assets/gallery/annual-report-24-25/img_5.jpg" alt="Annual Report Photo 5" />
-                </div>
-                <div class="gallery-item">
-                    <img src="../assets/gallery/annual-report-24-25/img_6.jpg" alt="Annual Report Photo 6" />
-                </div>
-                <div class="gallery-item">
-                    <img src="../assets/gallery/annual-report-24-25/img_7.jpg" alt="Annual Report Photo 7" />
-                </div>
-                <div class="gallery-item">
-                    <img src="../assets/gallery/annual-report-24-25/img_8.jpg" alt="Annual Report Photo 8" />
-                </div>
-                <div class="gallery-item">
-                    <img src="../assets/gallery/annual-report-24-25/img_12.jpg" alt="Annual Report Photo 4" />
                 </div>
             </div>
         </section>
